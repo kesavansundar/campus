@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Recruitment Portal - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4 px-8 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Campus Recruitment Portal</h1>
+            <a href="home.html" class="bg-red-600 px-4 py-2 rounded hover:bg-red-700 transition">Logout</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-8 py-16">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Welcome to Your Dashboard</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Company Connections -->
+            <div class="card bg-white p-6 rounded-lg shadow-lg text-center">
+                <i class="fas fa-building text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Company Connections</h3>
+                <p class="text-gray-600 mb-4">Connect with top recruiters and explore job opportunities.</p>
+                <a href="companies.php" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Learn More</a>
+            </div>
+
+            <!-- Student Profiles -->
+            <div class="card bg-white p-6 rounded-lg shadow-lg text-center">
+                <i class="fas fa-user-graduate text-4xl text-green-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Recruitment History</h3>
+                <p class="text-gray-600 mb-4">Data of the students who got placement in which Company.</p>
+                <a href="student_profiles.html" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Learn More</a>
+            </div>
+
+            <!-- Resume Builder -->
+            <div class="card bg-white p-6 rounded-lg shadow-lg text-center">
+                <i class="fas fa-file-alt text-4xl text-purple-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Resume Builder</h3>
+                <p class="text-gray-600 mb-4">Craft professional resumes to impress recruiters.</p>
+                <a href="resume_builder.html" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">Learn More</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Campus Recruitment Portal. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-blue-300">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-300">Terms of Service</a>
+                <a href="#" class="hover:text-blue-300">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

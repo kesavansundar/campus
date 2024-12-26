@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Previous head content remains the same -->
+<head>
+    <!-- Previous head content -->
+    <style>
+        /* Previous styles remain the same */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Previous header content remains the same -->
+    
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-800">Dashboard Overview</h2>
+            <div class="flex space-x-4">
+                <!-- Replace the export button with dropdown -->
+                <div class="relative dropdown">
+                    <button onclick="toggleDropdown()" class="flex items-center space-x-2 bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition">
+                        <i class="fas fa-download text-blue-600"></i>
+                        <span>Export Data</span>
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <div class="dropdown-menu w-48 py-2">
+                        <a href="#" onclick="exportData('companies', 'excel')" class="flex items-center px-4 py-2 hover:bg-gray-100">
+                            <i class="fas fa-file-excel text-green-600 w-6"></i>
+                            <span>Export to Excel</span>
+                        </a>
+                        <a href="#" onclick="exportData('companies', 'pdf')" class="flex items-center px-4 py-2 hover:bg-gray-100">
+                            <i class="fas fa-file-pdf text-red-600 w-6"></i>
+                            <span>Export to PDF</span>
+                        </a>
+                        <a href="#" onclick="exportData('companies', 'csv')" class="flex items-center px-4 py-2 hover:bg-gray-100">
+                            <i class="fas fa-file-csv text-blue-600 w-6"></i>
+                            <span>Export to CSV</span>
+                        </a>
+                    </div>
+                </div>
+                <button class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition">
+                    <i class="fas fa-plus"></i>
+                    <span>New Entry</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Rest of the main content remains the same -->
+    </main>
+
+    <!-- Previous footer content remains the same -->
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        function exportData(type, format) {
+            // Example data structure
+            const data = {
+                companies: {
+                    headers: ['Company Name', 'Industry', 'Positions', 'Status'],
+                    rows: [
+                        ['Tech Corp', 'IT', 'Software Engineer', 'Active'],
+                        ['Finance Inc', 'Banking', 'Analyst', 'Active']
+                    ]
+                }
+            };
+
+            // Mock export function
+            console.log(`Exporting ${type} data in ${format} format`);
+            
+            // In real implementation, you would:
+            // 1. Make an AJAX call to your backend
+            // 2. Receive the file
+            // 3. Trigger download
+            // Example:
+            // fetch(`/api/export/${type}?format=${format}`)
+            //     .then(response => response.blob())
+            //     .then(blob => {
+            //         const url = window.URL.createObjectURL(blob);
+            //         const a = document.createElement('a');
+            //         a.href = url;
+            //         a.download = `${type}_export.${format}`;
+            //         a.click();
+            //     });
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.dropdown');
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
